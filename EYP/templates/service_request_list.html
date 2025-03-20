@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Solicitudes de Servicio</title>
+</head>
+<body>
+    <h1>Solicitudes de Servicio</h1>
+    {% if service_requests %}
+        <ul>
+            {% for request in service_requests %}
+                <li>{{ request.customer_name }} solicitó {{ request.service.company.name }} - Total: ${{ request.total_cost }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No hay solicitudes registradas.</p>
+    {% endif %}
+</body>
+</html>
